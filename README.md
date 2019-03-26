@@ -92,7 +92,7 @@ Eclipse에서 [Open Projects]로 [repos](/repos) 에 있는 각자의 폴더를 
 
 ## 4. Play with Java!
 
-<iframe src="https://giphy.com/embed/QNFhOolVeCzPQ2Mx85" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/checkmatedigital-code-coding-monkey-QNFhOolVeCzPQ2Mx85">via GIPHY</a></p>
+![](https://www.dailydot.com/wp-content/uploads/951/c8/c223decf8fe8a7a0d1aadf96a7cd6556.jpg)
 
 자바 언어를 이용하여 위의 [주어진 과제](#proposal)를 수행하고, 디렉토리에 저장한다.
 
@@ -129,5 +129,5 @@ pull request하는 전체적인 튜토리얼은 위 이미지의 [출처](https:
 
 # Now here we go
 
-<iframe src="https://giphy.com/embed/rdma0nDFZMR32" width="480" height="346" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/happy-car-home-rdma0nDFZMR32">via GIPHY</a></p>
+![](https://i.pinimg.com/originals/fe/3a/a9/fe3aa94af63ec0edccba2574081c2fe3.jpg)
 
