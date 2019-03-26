@@ -78,9 +78,13 @@ Fork는 일반적으로 오픈소스에 참여(contribute)할 때 사용한다.
 참여할 프로젝트의 레파지토리를 본인의 Github 레파지토리로 fork해서 버그를 고치거나 새로운 기능을 첨부하여 pull request 한다.
 ```
 
+<br>
+
 ## 2. Clone repository
 
 Eclipse로 작업하기 위해서는 Fork한 레파지토리를 **Clone**해서 로컬 레파지토리로 가져온다.
+
+<br>
 
 ## 3. Sync with Eclipse
 
@@ -90,11 +94,15 @@ Eclipse로 작업하기 위해서는 Fork한 레파지토리를 **Clone**해서 
 
 Eclipse에서 [Open Projects]로 [repos](/repos) 에 있는 각자의 폴더를 불러온다.
 
+<br>
+
 ## 4. Play with Java!
 
 ![](https://www.dailydot.com/wp-content/uploads/951/c8/c223decf8fe8a7a0d1aadf96a7cd6556.jpg)
 
 자바 언어를 이용하여 위의 [주어진 과제](#proposal)를 수행하고, 디렉토리에 저장한다.
+
+<br>
 
 ## 4. Pull request
 
