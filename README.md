@@ -127,11 +127,11 @@ pull request하는 전체적인 튜토리얼은 위 이미지의 [출처](https:
 
 자바 소스코드 레파지토리.
 
-- [시윤](/Siyun/src)
-- [민지](/Minji/src)
-- [영현](/Younghyeon/src)
-- [현우](/Hyunwoo/src)
-- [영진](/Youngjin/src)
+- [시윤](https://github.com/youngjinmo/KHacademy_miniProj/tree/master/repos/Siyun)
+- [민지](https://github.com/youngjinmo/KHacademy_miniProj/tree/master/repos/Minji)
+- [영현](https://github.com/youngjinmo/KHacademy_miniProj/tree/master/repos/Younghyeon)
+- [현우](https://github.com/youngjinmo/KHacademy_miniProj/tree/master/repos/Hyunwoo)
+- [영진](https://github.com/youngjinmo/KHacademy_miniProj/tree/master/repos/Youngjin)
 
 <br>
 
