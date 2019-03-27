@@ -6,10 +6,10 @@
 - [Proposal](#proposal)
 - [Rule](#paragraph2)
 - How to review codes
-  1. [Fork repository](#fork-repository)
-  2. [Clone repository](#clone-repository)
-  3. [Sync with Eclipse](#review01)
-  4. [Play with Java!](#play-with-java!)
+  1. [Fork repository](#fork)
+  2. [Clone repository](#clone)
+  3. [Sync with Eclipse](#sync)
+  4. [Play with Java!](#coding)
   5. [Pull request](#pull-request)
   6. [Repositories](#repositories)
 
@@ -65,7 +65,7 @@ KH정보교육원 Activity Program
 
 # How to review codes
 
-## 1. Fork repository
+## 1. Fork repository<a name="fork"></a>
 
 ![](http://i.imgur.com/ufBroYo.png)
 
@@ -80,13 +80,13 @@ Fork는 일반적으로 오픈소스에 참여(contribute)할 때 사용한다.
 
 <br>
 
-## 2. Clone repository
+## 2. Clone repository<a name="clone"></a>
 
 Eclipse로 작업하기 위해서는 Fork한 레파지토리를 **Clone**해서 로컬 레파지토리로 가져온다.
 
 <br>
 
-## 3. Sync with Eclipse
+## 3. Sync with Eclipse<a name="sync"></a>
 
 이제 로컬 레파지토리로 본 저장소를 가져왔으니 Eclipse로 작업경로를 동기화해준다.
 
@@ -96,7 +96,7 @@ Eclipse에서 [Open Projects]로 [repos](/repos) 에 있는 각자의 폴더를 
 
 <br>
 
-## 4. Play with Java!
+## 4. Play with Java!<a name="coding"></a>
 
 ![](https://www.dailydot.com/wp-content/uploads/951/c8/c223decf8fe8a7a0d1aadf96a7cd6556.jpg)
 
@@ -104,7 +104,7 @@ Eclipse에서 [Open Projects]로 [repos](/repos) 에 있는 각자의 폴더를 
 
 <br>
 
-## 4. Pull request
+## 4. Pull request<a name="pull-request"></a>
 
 **한** 번에 문제를 다 수행하지 못한 경우도 있을 수 있으므로 그 때는 진행도를 **Commit message**에 남기고 commit하여 **버전 관리**를 경험 및 학습한다.
 
@@ -123,7 +123,7 @@ pull request하는 전체적인 튜토리얼은 위 이미지의 [출처](https:
 
 <br>
 
-## 5. Repositories
+## 5. Repositories<a name="repositories"></a>
 
 자바 소스코드 레파지토리.
 
