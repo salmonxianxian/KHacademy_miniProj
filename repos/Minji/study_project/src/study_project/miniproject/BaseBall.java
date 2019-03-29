@@ -1,48 +1,80 @@
 package study_project.miniproject;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class BaseBall {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Random ran = new Random();	
 		
+		final int cnt = 3;
 		int[] user = new int[3]; //user
 		int[] random = new int[3]; //com
-		int strike = 0;
+		int strike = 0; 
 		int ball = 0;
-		int idx = 0; //배열 인덱스
-		int count = 0;
+		int out = 0;
+//		int[] idx; //배열 인덱스
+		int count = 0; 	
 		
-		Random ran = new Random();
+		
 		for(int i = 0; i < random.length; i++) {
-			random[i] = ran.nextInt(9)+1; //1~9
+			random[i] = ran.nextInt(8)+1; //1~9
 			for(int j = 0; j < i; j++) {
-				if(random[i] == random[j]) {
+				if(random[i] == random[j]) { 
 					i--;
 				}
 			}
-		}
+		}//for End
 		
+		System.out.println("[TEST] CHECK : " + Arrays.toString(random));
 		
 		
 		//컴퓨터 배열과 사용자 배열을 서로 비교, 스트라이크, 볼인지 판단
 		while(true) {
-			for(int i = 0; i < 3; i++) {
-				System.out.print("1~10 숫자 입력 : ");
+			
+			for(int i = 0; i < cnt; i++) { 
+				System.out.print("1~9 숫자 입력 : ");
 				user[i] = sc.nextInt();
-				
-				idx = i;
-			}
+			}//for End
+			System.out.println();
 			
-//			for(int i = 0; i < 3; i++) {
-//				idx = i;
-//			}
+			//j for문이 2번 반복되거나 3번 반복됨 - 3번만 반복으로 수정
+			//ball이 안됨
 			
-			if(random[idx] == user[idx]) {
+			
+			for(int i = 0; i < 1; i++) {
 				
-			}
-//			else if(random[idx] != user[idx] && )
-		}
-	}
-}
+				for(int j = 0; j < cnt; j++) {
+					
+					if(user[i] == random[j]/*값*/ && i == j/*위치*/) {
+						strike += 1;
+						System.out.println("[TEST] strike : " + strike);
+					}
+//					else if(user[i] == random[j] && i != j) { //값은 같으나 위치가 다를 경우
+//						ball += 1;	
+//						System.out.println("[TEST] ball : " + ball);
+//					}
+					else if(user[i] != random[j] && i != j) {
+						out += 1;
+						System.out.println("[TEST] out : " + out);
+					}else {
+						ball += 1;	
+						System.out.println("[TEST] ball : " + ball);
+					}
+					
+				}//for End
+				
+			}//for End
+			
+			count++;
+			
+			System.out.println("Strike : " + strike + ", Ball : " + ball + 
+									", Out : " + out + " -> Count : " + count + "\n");
+			
+			strike = ball = out = 0; 
+			
+		}//while End
+	}//End Main
+}//End Class
