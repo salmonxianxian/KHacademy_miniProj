@@ -12,7 +12,7 @@ public class BaseBall {
 		final int cnt = 3;
 		int[] user = new int[3]; //user
 		int[] random = new int[3]; //com
-		int strike = 0; 
+		int strike = 0; //스트라이크 개수 
 		int ball = 0;
 		int out = 0;
 //		int[] idx; //배열 인덱스
@@ -42,8 +42,9 @@ public class BaseBall {
 			
 			//j for문이 2번 반복되거나 3번 반복됨 - 3번만 반복으로 수정
 			//ball이 안됨
+			//strike 도 두번째에서는 안됨
 			
-			
+			//스트라이크 
 			for(int i = 0; i < 1; i++) {
 				
 				for(int j = 0; j < cnt; j++) {
@@ -51,15 +52,22 @@ public class BaseBall {
 					if(user[i] == random[j]/*값*/ && i == j/*위치*/) {
 						strike += 1;
 						System.out.println("[TEST] strike : " + strike);
+						
+						if(strike == cnt) {
+							System.out.println("홈런!!");
+							return;
+						}
 					}
-//					else if(user[i] == random[j] && i != j) { //값은 같으나 위치가 다를 경우
-//						ball += 1;	
-//						System.out.println("[TEST] ball : " + ball);
-//					}
-					else if(user[i] != random[j] && i != j) {
-						out += 1;
-						System.out.println("[TEST] out : " + out);
-					}else {
+					
+				}//for End
+				
+			}//for End
+			
+			for(int i = 0; i < 1; i++) {
+				
+				for(int j = 0; i < cnt; j++) {
+					
+					if(user[i] == random[j] && i != j) { //값은 같으나 위치가 다를 경우
 						ball += 1;	
 						System.out.println("[TEST] ball : " + ball);
 					}
@@ -67,6 +75,8 @@ public class BaseBall {
 				}//for End
 				
 			}//for End
+			
+			out = cnt - ball - strike;
 			
 			count++;
 			
