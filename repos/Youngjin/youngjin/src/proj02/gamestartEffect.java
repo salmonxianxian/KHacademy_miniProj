@@ -1,7 +1,7 @@
 package proj02;
 
 public class gamestartEffect {
-	landingEffect ld = new landingEffect();
+	landing ld = new landing();
 	
 	public void loading() {
 		

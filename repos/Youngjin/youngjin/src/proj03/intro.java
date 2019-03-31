@@ -3,7 +3,7 @@ package proj03;
 import java.util.Random;
 
 import java.util.Scanner;
-import proj02.landingEffect;
+import proj02.landing;
 import proj03.baseball;
 
 public class intro {
@@ -11,7 +11,7 @@ public class intro {
 	Random rand = new Random();
 	Scanner sc = new Scanner(System.in);
 	
-	landingEffect  ld = new landingEffect();
+	landing  ld = new landing();
 	baseball b = new baseball();
 	
 	
@@ -38,7 +38,7 @@ public class intro {
 	
 	public void tutorials() {
     	// 게임 룰을 알려줄지 말지에 대한 질문 
-    	System.out.println("안녕 지금부터 베이스볼 게임을 할 거야.\n혹시 규칙을 아니? (Y/N) ");
+    	System.out.print("안녕 지금부터 베이스볼 게임을 할 거야.\n혹시 규칙을 아니? (Y/N) ");
     	char tutorials = ' ';   // Y면 룰을 알려주고, N이면 바로 게임 진
     	do {
     		System.out.print("아니, Y랑 N 둘 중 하나 입력하라고.... 아.. ");
