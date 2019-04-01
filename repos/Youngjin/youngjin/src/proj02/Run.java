@@ -1,5 +1,5 @@
 package proj02;
-
+//characterset to UTF-8 한글
 public class Run {
 	
 	// Run()에서 어느 부분이 error 발생하는지 체크하기 위한 메서드 

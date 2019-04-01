@@ -1,5 +1,5 @@
 package proj03;
-
+//characterset to UTF-8 한글
 import java.util.Random;
 
 import java.util.Scanner;

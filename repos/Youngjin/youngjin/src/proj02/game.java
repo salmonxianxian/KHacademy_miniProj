@@ -1,5 +1,5 @@
 package proj02;
-
+//characterset to UTF-8 한글
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,14 +18,14 @@ public class game {
 	public int units() {
 		
 		System.out.println("토너먼트에 넣을 음식의 가짓 수를 입력해줘. (4/8/16)");
-		String input = sc.next();
-		int num = Integer.parseInt(input);
+		int num = sc.nextInt();
 		
-		do {
-			System.out.println("4, 8, 16 중 다시 입력해봐.");
-			input = sc.next();
-			num = Integer.parseInt(input);
-		} while(!(num==4||num==8||num==16));
+		if(!(num==4||num==8||num==16)) {
+			do {
+				System.out.println("4, 8, 16 중 다시 입력해봐.");
+				num = sc.nextInt();
+			} while(!(num==4||num==8||num==16));
+		}
 		
 		return num;
 	}
@@ -68,6 +68,5 @@ public class game {
 			System.out.println(shuf[i]);
 		}
 	}
-	
 	
 }
