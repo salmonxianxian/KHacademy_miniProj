@@ -9,7 +9,9 @@ public class gamestartEffect {
 		
 		// 몇 퍼센트 진행중인지 보여주는 메세지
 		for(int i=0; i<10; i++) {
-			if(i==9) {
+			if(i==0) {
+				load[i] = "\n진행중   "+(i+1)*10+"% ";
+			} else if(i==9) {
 				load[i] = "진행중  "+(i+1)*10+"% ";
 			} else {
 				load[i] = "진행중   "+(i+1)*10+"% ";

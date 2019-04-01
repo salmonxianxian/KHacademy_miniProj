@@ -1,4 +1,7 @@
 package proj02;
+
+import java.util.Random;
+
 //characterset to UTF-8 한글
 public class Run {
 	
@@ -28,16 +31,19 @@ public class Run {
 	
 	
 	public static void main(String[] args) {
+		
 		// 객체 집합 
 		landing ld = new landing();
 		gamestartEffect gs = new gamestartEffect();
-		game game = new game();
+		foodList fl = new foodList();
+		tournament tourn = new tournament();
 		
 		// 프로그램 랜딩 페이지 출력 
 		ld.intro();
 		
 		// 음식리스트 입력받고, 출력할 클래스 호출
-		game.game();
+		String[] foodlist = fl.shuffle(fl.inputlist(fl.units()));
+		tourn.game(foodlist);
 		
 	}
 }
