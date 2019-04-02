@@ -1,10 +1,9 @@
 package proj03;
-//characterset to UTF-8 한글
-import java.util.Random;
 
+import java.util.Random;
 import java.util.Scanner;
+
 import proj02.landing;
-import proj03.baseball;
 
 public class intro {
 	
@@ -13,6 +12,7 @@ public class intro {
 	
 	landing  ld = new landing();
 	baseball b = new baseball();
+	
 	
 	
 	public void manual() {

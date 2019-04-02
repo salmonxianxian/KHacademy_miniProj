@@ -1,5 +1,5 @@
 package proj02;
-//characterset to UTF-8 한글
+
 public class gamestartEffect {
 	landing ld = new landing();
 	
