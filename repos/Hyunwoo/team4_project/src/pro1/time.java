@@ -1,5 +1,6 @@
 package pro1;
 
+import java.util.Date;
 import java.util.Scanner;
 
 // 현재시간을 입력하면 집에 갈때까지 남은 수업시간을 계산해줍니다
@@ -25,27 +26,57 @@ public class time {
 
 	private String scan = null;
 	
-	
+	private int hour=0;
+	private int min=0;
+	private int sec=0;
+	private char input_ch = '\0';
+	private String choice = null;
 	public static void main(String[] args) {	
 		new time();
 	}
 	
-	
 	public time( ) {
-		h_set();
-		if(Integer.parseInt(save[0])==24) {
-			System.out.println();
-		} else {
-			m_s_set();
+		System.out.println("수업까지 남은시간 계산하기");
+		System.out.println("1. 현재시간 [자동]입력");
+		System.out.println("2. 현재시간 [직접]입력");
+		System.out.print("\n\t선택해주세요!! >>");
+		while(input_ch<49 || input_ch > 50) {
+			choice = sc.nextLine();
+			if( choice.length() ==1) {
+				input_ch = choice.charAt(0);
+				if(input_ch<49 || input_ch > 50) 
+					System.out.println("\n\t>>다시입력!!");	
+			} else System.out.println("\n\t>>다시입력!!");
 		}
-		time_calculate();
+		switch(Integer.parseInt(choice)) {
+		case 1:	
+			Date dt = new Date();
+
+			hour=(dt.getHours());
+			min=(dt.getMinutes());
+			sec=(dt.getSeconds());
+			
+			time_calculate();
+			break;
+		case 2:
+			System.out.println();
+			h_set();
+			if(Integer.parseInt(save[0])==24) {
+				System.out.println();
+			} else {
+				m_s_set();
+			}
+			hour=Integer.parseInt(save[0]);
+			min=Integer.parseInt(save[1]);
+			sec=Integer.parseInt(save[2]);
+			time_calculate();
+
+			break;
+		}
 	}
 	
 	//-------------시간,분,초 계산---------------
 	public void time_calculate() {
-		int hour=Integer.parseInt(save[0]);
-		int min=Integer.parseInt(save[1]);
-		int sec=Integer.parseInt(save[2]);
 		
 		for(int i=0; i<=1; i++) {
 			if(min==60) {
@@ -147,7 +178,7 @@ public class time {
 	//-------------------시간입력-------------------------
 	public void h_set() {
 		while(true) {
-			System.out.print("시간을 입력해 주세요>> ");
+			System.out.print("시간을 입력해 주세요!!>> ");
 			scan = sc.nextLine();
 
 			if(scan.length()==1) {
