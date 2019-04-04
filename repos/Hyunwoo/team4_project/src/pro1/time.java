@@ -2,7 +2,14 @@ package pro1;
 
 import java.util.Scanner;
 
-//- 현재시간을 입력하면 집에 갈때까지 남은 수업시간과 쉬는시간을 계산해줌
+// 현재시간을 입력하면 집에 갈때까지 남은 수업시간을 계산해줍니다
+// 시간,분,초 입력 받을때 String으로 받은 이유는 int형으로 입력 받을시
+// 숫자 이외의 값을 입력하면 프로그램이 오류가 발생하면서 종료 됩니다
+// 그래서 String으로 받고 char에 저장해서 아스키코드로 숫자를 판별한 후
+// 다시 String으로 저장 하는 식으로 만들었습니다
+
+// 시간 계산 만들기는 했는데 오류가 발생할수도 있습니다
+// 오류 발생하면 알려주세요
 
 public class time {
 
@@ -17,48 +24,127 @@ public class time {
 	private String[] save = new String[3];
 
 	private String scan = null;
-
+	
+	
+	public static void main(String[] args) {	
+		new time();
+	}
+	
+	
 	public time( ) {
 		h_set();
-		m_s_set();
-		
-		int time=0;
-		int min=0;
-		int sec=0;
-		
-		time=Integer.parseInt(save[0]);
-		min=Integer.parseInt(save[1]);
-		sec=Integer.parseInt(save[2]);
-		
-		System.out.print("현제 시간 : ");
-		for(int j=0; j<3; j++) {
-			System.out.print(save[j]+str[j]+" ");
+		if(Integer.parseInt(save[0])==24) {
+			System.out.println();
+		} else {
+			m_s_set();
 		}
-
+		time_calculate();
+	}
+	
+	//-------------시간,분,초 계산---------------
+	public void time_calculate() {
+		int hour=Integer.parseInt(save[0]);
+		int min=Integer.parseInt(save[1]);
+		int sec=Integer.parseInt(save[2]);
+		
+		for(int i=0; i<=1; i++) {
+			if(min==60) {
+				min=0;
+				hour++;
+			}
+			if(sec==60) {
+				sec=0;
+				min++;
+			}
+		}
+		
+		System.out.print("\n현제 시간 : ");
+		System.out.print(hour+str[0]+" ");
+		System.out.print(min+str[1]+" ");
+		System.out.print(sec+str[2]);
+		
 		System.out.print("\n끝나는 시간 : ");
 		for(int j=0; j<3; j++) {
 			System.out.print(endtime[j]+str[j]+" ");
 		}
-		
-		if(time<=15 && min<=20) {
-			sumtime[0] = endtime[0] - time;
-			sumtime[1] = endtime[1] - min;
-			sumtime[2] = endtime[2] - sec;
+		//------- 시간-분-초 계산 ----------
+		if(hour==15 && min>=20) {
+			sumtime[0] = endtime[0] - hour;
+			sumtime[1] = min - endtime[1];
+			sumtime[2] = sec;
+		} else if(hour<=15) {
+			if(min<=20) {
+				sumtime[0] = endtime[0] - hour;
+				sumtime[1] = endtime[1] - min;
+				if(sec==0)
+					sumtime[2] = sec;
+				else {
+					sumtime[2] = 60 - sec;
+					if(sumtime[1]==0) {
+						sumtime[1]=60;
+						sumtime[0]--;
+					}
+					sumtime[1]--;
+				}
+			} else {
+				sumtime[0] = endtime[0] - hour;
+				if(hour==15) {
+					sumtime[1] = min - endtime[1] ;
+				} else {
+					sumtime[1] = 60 - min + endtime[1];
+					sumtime[0]--;
+				}	
+				if(sec==0)
+					sumtime[2] = endtime[2] - sec;
+				else {
+					sumtime[2] = 60 - sec;
+					sumtime[1]--;
+				}
+			}
+			
+		} else {
+			if(min<=20) {
+				sumtime[0] = hour - endtime[0];
+				if(min==20) 
+					sumtime[1] = endtime[1] - min;
+				else {
+					sumtime[1] = 60 - endtime[1] + min;
+					sumtime[0]--;
+				}
+			} else {
+				sumtime[0] = hour - endtime[0];
+				sumtime[1] = min - endtime[1];
+			}
+			sumtime[2] = sec;
 		}
-		
-		
-		System.out.print("\n수업이 끝나기 까지 남은 시간 : ");
-		for(int j=0; j<3; j++) {
-			System.out.print(sumtime[j]+str[j]+" ");
+		//---------위에서 계산한 결과 출력------------
+		if(hour==15 && min==20 && sec==0) {
+			System.out.println("\n\n수업 끝!! 집에 가자~~");
+		} else if(hour==15) {
+			if(min>=20) {
+				System.out.print("\n\n수업 끝나고 지나간 시간 : ");
+
+			} else if(min<20) {
+				System.out.print("\n\n앞으로 남은 시간 : ");
+			}
+			for(int j=0; j<3; j++) {
+				System.out.print(sumtime[j]+str[j]+" ");
+			}
+		} else if(hour>=16) {
+			System.out.print("\n\n수업 끝난고 지나간 시간 : ");
+			for(int j=0; j<3; j++) {
+				System.out.print(sumtime[j]+str[j]+" ");
+			}
+		} else if(hour<15) {
+			System.out.print("\n\n앞으로 남은 시간 : ");
+			for(int j=0; j<3; j++) {
+				System.out.print(sumtime[j]+str[j]+" ");
+			}
 		}
-		
-		
+		System.out.println("\n");
 	}
-
-	public static void main(String[] args) {	
-		new time();
-	}
-
+	
+	//-------------------시간입력-------------------------
 	public void h_set() {
 		while(true) {
 			System.out.print("시간을 입력해 주세요>> ");
@@ -80,7 +166,13 @@ public class time {
 					input2 = scan.charAt(1);
 					if(input2<48 || input2>52) { 
 						System.out.println("\n\t다시 입력해주세요!!");
-					} else break;
+					} else {
+						if(input2==52) {
+							save[1]="0";
+							save[2]="0";
+						}
+						break;
+					}
 
 				} else if(input1>=48 || input1<=49) {
 					input2 = scan.charAt(1);
@@ -89,14 +181,14 @@ public class time {
 					} else break;	
 				} 
 
-
 			}else {
 				System.out.println("\n\t다시 입력해주세요!!");
 			}
 		} //while end
 		save[0] = scan;
 	}
-
+	
+	//------------------분,초 입력-----------------------
 	public void m_s_set() {
 		int i=1;
 		while(i!=3) {
@@ -131,13 +223,12 @@ public class time {
 					}	
 				} 
 
-
 			}else {
 				System.out.println("\n\t다시 입력해주세요!!");
 				continue;
 			}
 			save[i] = scan;
 			i++;
-		} //while end	
+		} //while end
 	}
 }
