@@ -14,6 +14,7 @@ public class Run {
 			System.out.println("[1] 밥집 추천 프로그램");
 			System.out.println("[2] 이상형월드컵");
 			System.out.println("[3] 숫자야구 게임");
+			System.out.println("[4] 하원시간 계산기");
 			System.out.println("\n[0] 프로그램 종료\n");
 			System.out.println("~*~*~*~*~*~*~*~*~*~");
 			
@@ -29,6 +30,8 @@ public class Run {
 			case "2" : new WorldCup();
 				break;
 			case "3" : new BaseBall();
+				break;
+			case "4" : new WannaGoHome2();
 				break;
 			case "0" : System.out.println("@ 프로그램을 종료합니다.");
 				return;
